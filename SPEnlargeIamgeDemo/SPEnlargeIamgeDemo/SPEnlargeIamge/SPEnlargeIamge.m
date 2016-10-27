@@ -25,6 +25,7 @@ UIView *_bgView;
     table.contentInset = UIEdgeInsetsMake(headerView.bounds.size.height, 0, 0, 0);
     _bgView.contentMode = UIViewContentModeScaleAspectFill;
     _bgView.clipsToBounds = YES;
+    _bgView.userInteractionEnabled = YES;
     headerView.frame = CGRectMake(0, -headerView.bounds.size.height, headerView.bounds.size.width, headerView.bounds.size.height);
     [table addSubview:headerView];
     table.contentOffset = CGPointMake(0, -headerView.bounds.size.height);
