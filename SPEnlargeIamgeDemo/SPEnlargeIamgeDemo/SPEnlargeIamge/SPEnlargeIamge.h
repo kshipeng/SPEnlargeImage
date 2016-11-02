@@ -12,6 +12,7 @@
 @interface SPEnlargeIamge : NSObject
 
 - (void)enlargeAddOnTableView:(UITableView *)table tebleHeaderView:(UIImageView *)headerView;
+- (void)enlargeAddOnTableView:(UITableView *)table tebleHeaderView:(UIImageView *)headerView viewController:(UIViewController *)ctr;
 void enlargeIamgePostTableContentOffSet_Y(CGFloat y);
 @end
 

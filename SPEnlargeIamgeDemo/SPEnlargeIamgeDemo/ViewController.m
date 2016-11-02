@@ -39,9 +39,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [UITableViewCell new];
 }
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     enlargeIamgePostTableContentOffSet_Y(scrollView.contentOffset.y);
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

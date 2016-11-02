@@ -12,15 +12,26 @@
 
 
 @end
+
 CGFloat imageH = 0;
 UITableView *_tableView;
 UIView *_bgView;
+UIViewController *_vc;
 
 @implementation SPEnlargeIamge
 
 - (void)enlargeAddOnTableView:(UITableView *)table tebleHeaderView:(UIImageView *)headerView {
+    [self setupTableView:table headerView:headerView controller:nil];
+}
+
+- (void)enlargeAddOnTableView:(UITableView *)table tebleHeaderView:(UIImageView *)headerView viewController:(UIViewController *)ctr {
+    [self setupTableView:table headerView:headerView controller:ctr];
+}
+
+- (void)setupTableView:(UITableView *)table headerView:(UIImageView *)headerView controller:(UIViewController *)viewCtr {
     _tableView = table;
     _bgView = headerView;
+    _vc = viewCtr;
     imageH = headerView.bounds.size.height;
     table.contentInset = UIEdgeInsetsMake(headerView.bounds.size.height, 0, 0, 0);
     _bgView.contentMode = UIViewContentModeScaleAspectFill;
@@ -31,8 +42,6 @@ UIView *_bgView;
     table.contentOffset = CGPointMake(0, -headerView.bounds.size.height);
 }
 
-
-
 @end
 void enlargeIamgePostTableContentOffSet_Y(CGFloat y) {
     if (y < -imageH) {
@@ -40,7 +49,6 @@ void enlargeIamgePostTableContentOffSet_Y(CGFloat y) {
         frame.origin.y = y;
         frame.size.height = -y;
         _bgView.frame = frame;
-
     }
 }
 
